@@ -12,7 +12,11 @@ To fire up a local version of it, you need to have Docker installed.
 
 
 In the directory containing the 'docker-compose.yml' file run the following commands:
-
+```
+docker-compose build
+docker-compose up -d
+```
+After launching the web application execute the following commands to restore the data
 
 ```
 docker exec -it watermelon-mongo-db bash
