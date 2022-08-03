@@ -5,13 +5,10 @@ services:
     build: '.'
     image: nponline/watermelon:latest
     container_name: watermelon-online
+    ports:
+      - '8093:8093'
     volumes:
     - ./data:/data
-    environment:
-        VIRTUAL_HOST: watermelon.naturalproducts.net
-        VIRTUAL_PORT: 8093
-        LETSENCRYPT_HOST: watermelon.naturalproducts.net
-        LETSENCRYPT_EMAIL: maria.ssorokina@gmail.com
 
 
   watermelon-mongo-db:
@@ -22,9 +19,3 @@ services:
     container_name: watermelon-mongo-db
     volumes:
     - ./mongodata:/mongodata
-
-
-networks:
-  default:
-    external:
-      name: nginx-proxy
